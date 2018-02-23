@@ -168,7 +168,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
   })
 
-  context.only('Jobs Section', function () {
+  context('Jobs Section', function () {
 
     beforeEach(function () {
       cy.visit(strSiteURL)
@@ -221,4 +221,181 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
   })
 
+  context('Press Section', function () {
+
+    beforeEach(function () {
+      cy.visit(strSiteURL)
+      cy.title().should('include', 'Hulu Press Site')
+    })
+
+    // Click 'Originals' item
+    //
+    it('Validates the Hulu Press Originals Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Originals')
+        .click()
+        .title()
+        .should('include','Hulu Originals – Hulu Press Site')
+    })
+
+    // Click 'News' item
+    //
+    it('Validates the Hulu Press News Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('News')
+        .click()
+        .title()
+        .should('include','Press Releases – Hulu Press Site')
+    })
+
+    // Click 'Schedule' item
+    //
+    it('Validates the Hulu Press Schedule Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Schedule')
+        .click()
+        .title()
+        .should('include','New This Month – Hulu Press Site')
+    })
+
+    // Click 'Press Site Terms' item
+    //
+    it('Validates the Hulu Press Press Site Terms Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Press Site Terms')
+        .click()
+        .title()
+        .should('include','Press Site Terms of Use – Hulu Press Site')
+    })
+  })
+
+  context('Follow Us Section', function () {
+
+    beforeEach(function () {
+      cy.visit(strSiteURL)
+      cy.title().should('include', 'Hulu Press Site')
+    })
+
+    // Click 'Twitter' item
+    //
+    it('Validates the Hulu Press Twitter Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Twitter')
+        .click()
+        .title()
+        .should('include','hulu (@hulu) | Twitter')
+    })
+
+    // Click 'Facebook' item
+    //
+    it('Validates the Hulu Press Facebook Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Facebook')
+        .click()
+        .title()
+        .should('include','Hulu – Home')
+    })
+
+    // Click 'Tumblr' item
+    //
+    it('Validates the Hulu Press Tumblr Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Tumblr')
+        .click()
+        .title()
+        .should('include','hulu ')
+    })
+
+    // Click 'YouTube' item
+    //
+    it('Validates the Hulu Press YouTube Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('YouTube')
+        .click()
+        .title()
+        .should('include','Hulu - YouTube - YouTube')
+    })
+
+    // Click 'Instagram' item
+    //
+    it('Validates the Hulu Press Instagram Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Instagram')
+        .click()
+        .title()
+        .should('include','Hulu (@hulu) • Instagram photos and videos')
+    })
+
+    // Click 'Press Site Terms' item
+    //
+    it('Validates the Hulu Press Press Site Terms Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Google+')
+        .click()
+        .title()
+        .should('include','Hulu - Google+')
+    })
+  })
+
+  context.only('Legal Section', function () {
+
+    beforeEach(function () {
+      cy.visit(strSiteURL)
+      cy.title().should('include', 'Hulu Press Site')
+    })
+
+    // Click 'Originals' item
+    //
+    it('Validates the Hulu Press About Ads Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('About Ads')
+        //.click()
+        //.title()
+        //.should('include','Hulu Originals – Hulu Press Site')
+    })
+
+    // Click 'News' item
+    //
+    it('Validates the Hulu Press News Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Hulu.com Terms')
+        .click()
+        .title()
+        .should('include','Terms of Use | Hulu Online | Hulu')
+    })
+
+    // Click 'Schedule' item
+    //
+    it('Validates the Hulu Press Privacy Policy Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('Privacy Policy')
+        .click()
+        .title()
+        .should('include','Privacy Policy | Hulu Online | Hulu')
+    })
+
+    // Click '© 2017 Hulu' item
+    //
+    it('Validates the Hulu Press © 2017 Hulu Footer item in the Jobs section activation/navigation', function() {
+      cy
+        .get(slctrFooterUL)
+        .contains('© 2017 Hulu')
+        //.click()
+        //.title()
+        //.should('include','Press Site Terms of Use – Hulu Press Site')
+    })
+  })
 })
