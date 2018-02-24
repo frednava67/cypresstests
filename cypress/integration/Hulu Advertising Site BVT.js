@@ -6,7 +6,7 @@ describe('Advertising Site Launch Test', function() {
 })
 
 describe('Ad Experiences Launch Test', function() {
-    it('Visits the Ad Experiences area', function() {
+    it('Visits the Ad Experience area', function() {
         cy.visit('https://www.hulu.com/advertising/ad-experiences/')
         cy.title().should('include', 'Ad Experience – Hulu Advertising')
     })

@@ -1,5 +1,5 @@
 const strSiteURL = 'https://www.hulu.com/advertising';
-const slctrNav = '#menu-primary-navigation';
+fconst slctrNav = '#menu-primary-navigation';
 
 describe('Top Nav Existence Test', function() {
 
