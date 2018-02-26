@@ -12,7 +12,7 @@ describe('Hulu Footer Existence Test', function() {
         cy.title().should('include', 'Hulu Advertising')
     })
 
-    it('Validatese Hulu Advertising Hulu Footer section', function() {
+    it('Validates Hulu Advertising Hulu Footer section', function() {
         cy.get(slctrFooterUL).contains('Hulu')
   
         cy.get(slctrFooterUL).contains('About Us')
@@ -20,7 +20,7 @@ describe('Hulu Footer Existence Test', function() {
         cy.get(slctrFooterUL).contains('Subscribe Now')
     })
   
-    it('Validatese Hulu Advertising Advertising Footer section', function() {
+    it('Validates Hulu Advertising Advertising Footer section', function() {
         cy.get(slctrFooterUL).contains('Advertising')
   
         cy.get(slctrFooterUL).contains('Ad Experience')
@@ -29,7 +29,7 @@ describe('Hulu Footer Existence Test', function() {
         cy.get(slctrFooterUL).contains('Description of Methodology (DOM)')
       })
 
-    it('Validatese Hulu Advertising Jobs Footer section', function() {
+    it('Validates Hulu Advertising Jobs Footer section', function() {
       cy.get(slctrFooterUL).contains('Jobs')
 
       cy.get(slctrFooterUL).contains('Positions')
@@ -38,7 +38,7 @@ describe('Hulu Footer Existence Test', function() {
       cy.get(slctrFooterUL).contains('Employee Verification')
     })
 
-    it('Validatese Hulu Advertising Press Footer section', function() {
+    it('Validates Hulu Advertising Press Footer section', function() {
         cy.get(slctrFooterUL).contains('Press')
   
         cy.get(slctrFooterUL).contains('Originals')
@@ -47,7 +47,7 @@ describe('Hulu Footer Existence Test', function() {
         cy.get(slctrFooterUL).contains('Press Site Terms')
       })
   
-      it('Validatese Hulu Advertising Follow Us Footer section', function() {
+      it('Validates Hulu Advertising Follow Us Footer section', function() {
         cy.get(slctrFooterUL).contains('Follow Us')
   
         cy.get(slctrFooterUL).contains('Twitter')
@@ -59,7 +59,7 @@ describe('Hulu Footer Existence Test', function() {
   
       })
   
-      it('Validatese Hulu Advertising Legal Footer section', function() {
+      it('Validates Hulu Advertising Legal Footer section', function() {
         cy.get(slctrFooterUL).contains('Legal')
   
         cy.get(slctrFooterUL).contains('About Ads')
@@ -227,9 +227,9 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
     // Click 'Originals' item
     //
-    it.only('Validates the Hulu Advertising Originals Footer item in the Jobs section activation/navigation', function() {
+    it('Validates the Hulu Advertising Originals Footer item in the Jobs section activation/navigation', function() {
       cy
-        .get(slctrFooterUL)
+        .get('#footer_nav > div > div:nth-child(4)')
         .contains('Originals')
         .click()
         .title()
@@ -270,7 +270,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
     })
   })
 
-  context('Follow Us Section', function () {
+  context.skip('Follow Us Section', function () {
 
     beforeEach(function () {
       cy.visit(strSiteURL)
@@ -344,7 +344,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
     })
   })
 
-  context('Legal Section', function () {
+  context.skip('Legal Section', function () {
 
     beforeEach(function () {
       cy.visit(strSiteURL)

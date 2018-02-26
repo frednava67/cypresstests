@@ -1,7 +1,10 @@
 const strSiteURL = 'https://www.hulu.com/advertising';
-fconst slctrNav = '#menu-primary-navigation';
+const slctrNav = '#menu-primary-navigation';
+const slctrNavIconsUL ='#content-wrap > header > div > nav.nav-social.nav-collapse > ul > li'
 
-describe('Top Nav Existence Test', function() {
+
+
+describe.only('Top Nav Existence Test', function() {
 
     beforeEach(function() {
         cy.visit(strSiteURL)
@@ -15,7 +18,35 @@ describe('Top Nav Existence Test', function() {
         cy.get(slctrNav).contains('Hulu Insights')
         cy.get(slctrNav).contains('Hulu Originals')
     })
+
+    it('Validates the Hulu Advertising Nav Area Social icon - Newsletter', function() {
+        cy
+        .get('#content-wrap > header > div > nav.nav-social.nav-collapse > ul > li > a.newsletter-open')
+        .should('have.attr','href').should('equal','#newsletter')
+    })
+   
+    it('Validates the Hulu Advertising Nav Area Social icon - Twitter', function() {
+        cy
+        .get('#content-wrap > header > div > nav.nav-social.nav-collapse > ul > li:nth-child(2) > a')
+        .should('have.attr','href').should('equal','https://twitter.com/HuluInsights')
+        
+    })
+
+    it('Validates the Hulu Advertising Nav Area Social icon - Get in touch', function() {
+        cy
+        .get('#content-wrap > header > div > nav.nav-social.nav-collapse > ul > li:nth-child(3) > a')
+        .should('have.attr','href').should('equal','.get-in-touch')
+        
+    })
+
+
+
+    
+
 })
+
+
+
 
 
 describe('Nav top-level item click navigation Tests', function() {
