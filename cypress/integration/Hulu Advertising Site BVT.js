@@ -70,6 +70,30 @@ describe.only('Advertising Site Home Page Element Presences Tests', function() {
             .should('have.class', 'slick-dots')
         })
     })
+
+    context('Verify Why Hulu Section', function () {
+
+        it('Verify top-level Section', function() {
+            cy
+            .get('#why-hulu')
+            .should('have.class', 'section')
+        })
+
+        it('Verify eyebrow', function() {
+            cy
+            .get('#why-hulu > div > div > div > div > div > div > div')
+            .should('have.class', 'eyebrow')
+            .should('have.class', 'small')
+        })
+
+        it('Verify Learn More', function() {
+            cy
+            .get('#why-hulu > div > div > div > div > div > div > a')
+            .should('have.class', 'btn')
+            .should('have.class', 'btn-primary')                            
+            .should('have.attr','href').should('equal','https://www.hulu.com/advertising/insights/')
+        })              
+    })
 })
 
 
