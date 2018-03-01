@@ -272,7 +272,7 @@ describe('Nav top-level item click navigation Tests', function() {
     })
   })
 
-  context.only('Corporate', function () {
+  context('Corporate', function () {
 
     beforeEach(function () {
       cy.visit(strSiteURL)

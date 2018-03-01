@@ -46,21 +46,21 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             cy
             .get('#home-hero')
             .should('have.class', 'hero')
-            .should('have.class', 'lg-header')
+            .and('have.class', 'lg-header')
         })
 
         it('Verify Left Button', function() {
             cy
             .get('#home-hero > div > button:first')
             .should('have.class', 'slick-prev')
-            .should('have.class', 'slick-arrow')
+            .and('have.class', 'slick-arrow')
         })
 
         it('Verify Right Button', function() {
             cy
             .get('#home-hero > div > button:nth-of-type(2)')
             .should('have.class', 'slick-next')
-            .should('have.class', 'slick-arrow')
+            .and('have.class', 'slick-arrow')
         })
 
         it('Verify Tracker Dots', function() {
@@ -82,15 +82,16 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             cy
             .get('#why-hulu > div > div > div > div > div > div > div')
             .should('have.class', 'eyebrow')
-            .should('have.class', 'small')
+            .and('have.class', 'small')
         })
 
         it('Verify Learn More', function() {
             cy
             .get('#why-hulu > div > div > div > div > div > div > a')
             .should('have.class', 'btn')
-            .should('have.class', 'btn-primary')                            
-            .should('have.attr','href').should('equal','https://www.hulu.com/advertising/insights/')
+            .and('have.class', 'btn-primary')                            
+            .and('have.attr','href')
+            .and('equal','https://www.hulu.com/advertising/insights/')
 
             cy
             .get('#why-hulu > div > div > div > div > div > div > a')
@@ -98,30 +99,32 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
         })    
     })
 
-    context('Verify Value Props Section', function () {
+    context.only('Verify Value Props Section', function () {
 
         it('Verify top-level Section', function() {
             cy
             .get('#value-props-1')
             .should('have.class', 'section')
-            .should('have.class','value-props')
+            .and('have.class','value-props')
         })
 
         it('Verify three sub items', function() {
             cy
             .get('#value-props-1 > div > div > div:nth-child(1)')
             .should('have.class', 'col-xs-4')
-            .contains('Younger & More Engaged Audience')
+            .get('h3')
+            .include('Younger & More Engaged Audience')
+            //.and('have.text','Younger & More Engaged Audience')
 
             cy
             .get('#value-props-1 > div > div > div:nth-child(2)')
             .should('have.class', 'col-xs-4')
-            .contains('Personalized & Precise Targeting')
+            .and('have.text','Personalized & Precise Targeting')
 
             cy
             .get('#value-props-1 > div > div > div:nth-child(3)')
             .should('have.class', 'col-xs-4')
-            .contains('Clutter Free & Premium Experience')
+            .and('have.text','Clutter Free & Premium Experience')
         })
     })
 
@@ -137,15 +140,16 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             cy
             .get('#brand-solutions > div > div > div > div > div > div > div')
             .should('have.class', 'eyebrow')
-            .should('have.class', 'small')
+            .and('have.class', 'small')
         })
 
         it('Verify Learn More', function() {
             cy
             .get('#brand-solutions > div > div > div > div > div > div > a')
             .should('have.class', 'btn')
-            .should('have.class', 'btn-primary')                            
-            .should('have.attr','href').should('equal','https://www.hulu.com/advertising/brand-solutions/')
+            .and('have.class', 'btn-primary')                            
+            .and('have.attr','href')
+            .and('equal','https://www.hulu.com/advertising/brand-solutions/')
 
             cy
             .get('#brand-solutions > div > div > div > div > div > div > a')
@@ -153,7 +157,7 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
         })    
     })
 
-    context.only('Verify Ad Experience Section', function () {
+    context('Verify Ad Experience Section', function () {
 
         it('Verify top-level Section', function() {
             cy
@@ -165,28 +169,26 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             cy
             .get('#ad-experience > div > div:nth-child(1) > div.col-xs-12.col-sm-8 > div')
             .should('have.class', 'eyebrow')
-            .should('have.class', 'small')
+            .and('have.class', 'small')
         })
 
         it('Verify Learn More', function() {
             cy
             .get('#ad-experience > div > div:nth-child(1) > div.col-xs-12.col-sm-4.cta-c > a')
             .should('have.class', 'btn')
-            .should('have.class', 'btn-primary')                            
-            .should('have.attr','href').should('equal','https://www.hulu.com/advertising/ad-experiences/')
-
-            cy
-            .get('#ad-experience > div > div:nth-child(1) > div.col-xs-12.col-sm-4.cta-c > a')
-            .contains('Learn More')
+            .and('have.class', 'btn-primary')                            
+            .and('have.text','Learn More')
+            .and('have.attr','href')
+            .and('equal','https://www.hulu.com/advertising/ad-experiences/')
         })
 
         it('Verify Awareness Tile existence', function() {
             cy
             .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.first')
             .should('have.class', 'tile')
-            .should('have.class', 'title-only')
-            .should('have.class', 'even')
-            .should('have.class', 'first')
+            .and('have.class', 'title-only')
+            .and('have.class', 'even')
+            .and('have.class', 'first')
 
             cy
             .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.first > div > a')
@@ -197,8 +199,8 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             cy
             .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.odd')
             .should('have.class', 'tile')
-            .should('have.class', 'title-only')
-            .should('have.class', 'odd')
+            .and('have.class', 'title-only')
+            .and('have.class', 'odd')
 
             cy
             .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.odd > div > a')
@@ -209,9 +211,9 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             cy
             .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.third')
             .should('have.class', 'tile')
-            .should('have.class', 'title-only')
-            .should('have.class', 'even')
-            .should('have.class', 'third')
+            .and('have.class', 'title-only')
+            .and('have.class', 'even')
+            .and('have.class', 'third')
 
             cy
             .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.third > div > a')
@@ -221,9 +223,109 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
 
     })
 
+    context('Verify Hulu Originals Section', function () {
+
+        it('Verify top-level Section', function() {
+            cy
+            .get('#hulu-originals')
+            .should('have.class', 'section')
+        })
+
+        it('Verify eyebrow', function() {
+            cy
+            .get('#hulu-originals > div > div > div > div > div > div > div')
+            .should('have.class', 'eyebrow')
+            .and('have.class', 'small')
+        })
+
+        it('Verify Learn More', function() {
+            cy
+            .get('#hulu-originals > div > div > div > div > div > div > a')
+            .should('have.class', 'btn')
+            .and('have.class', 'btn-primary')                            
+            .and('have.attr','href')
+            .and('equal','https://www.hulu.com/advertising/hulu-originals/')
+
+            cy
+            .get('#hulu-originals > div > div > div > div > div > div > a')
+            .contains('Learn More')
+        })    
+    })
+
+    context('Verify Case Studies Section', function () {
+
+        it('Verify top-level Section', function() {
+            cy
+            .get('#content-wrap > div > div > main > section:nth-child(8)')
+            .should('have.class', 'section')
+            .within(() => {
+                cy.get('div > div:nth-child(1) > div.col-xs-12.col-sm-8 > div')
+                .should('have.text', 'Case Studies')
+            })
+
+        })
+
+        it('Verify eyebrow', function() {
+            cy
+            .get('#content-wrap > div > div > main > section:nth-child(8) > div > div:nth-child(1) > div.col-xs-12.col-sm-8 > div')
+            .should('have.class', 'eyebrow')
+            .and('have.class', 'small')
+            .and('have.text', 'Case Studies')
+        })
+
+        it('Verify Case Studies', function() {
+            cy
+            .get('#ad-experience > div > div:nth-child(1) > div.col-xs-12.col-sm-4.cta-c > a')
+            .should('have.class', 'btn')
+            .and('have.class', 'btn-primary')                            
+            .and('have.attr','href')
+            .and('equal','https://www.hulu.com/advertising/ad-experiences/')
+
+            cy
+            .get('#ad-experience > div > div:nth-child(1) > div.col-xs-12.col-sm-4.cta-c > a')
+            .contains('Learn More')
+        })
+
+        it('Verify Awareness Tile existence', function() {
+            cy
+            .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.first')
+            .should('have.class', 'tile')
+            .and('have.class', 'title-only')
+            .and('have.class', 'even')
+            .and('have.class', 'first')
+
+            cy
+            .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.first > div > a')
+            .contains('Awareness')
+        })
+
+        it('Verify Engagement Tile existence', function() {
+            cy
+            .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.odd')
+            .should('have.class', 'tile')
+            .and('have.class', 'title-only')
+            .and('have.class', 'odd')
+
+            cy
+            .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.odd > div > a')
+            .contains('Engagement')
+        })
+
+        it('Verify Action Tile existence', function() {
+            cy
+            .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.third')
+            .should('have.class', 'tile')
+            .and('have.class', 'title-only')
+            .and('have.class', 'even')
+            .and('have.class', 'third')
+
+            cy
+            .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.third > div > a')
+            .contains('Action')
+        })
 
 
-
+    })
 
 
 
@@ -248,6 +350,13 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             .get('#ad-experience > div > div:nth-child(1) > div.col-xs-12.col-sm-4.cta-c > a')
             .click()
             .title().should('include', 'Ad Experience – Hulu Advertising')
+        })
+
+        it('Opens the Hulu Originals area via clicking the Learn More Button', function() {
+            cy
+            .get('#hulu-originals > div > div > div > div > div > div > a')
+            .click()
+            .title().should('include', 'Hulu Originals – Hulu Advertising')
         })
 
     })

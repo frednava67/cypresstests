@@ -4,7 +4,7 @@ const slctrNavIconsUL ='#content-wrap > header > div > nav.nav-social.nav-collap
 
 
 
-describe.only('Top Nav Existence Test', function() {
+describe('Top Nav Existence Test', function() {
 
     beforeEach(function() {
         cy.visit(strSiteURL)

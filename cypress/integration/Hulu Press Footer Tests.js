@@ -221,7 +221,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
   })
 
-  context('Press Section', function () {
+  context.only('Press Section', function () {
 
     beforeEach(function () {
       cy.visit(strSiteURL)
@@ -282,7 +282,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
     // Click 'Twitter' item
     //
-    it('Validates the Hulu Press Twitter Footer item in the Jobs section activation/navigation', function() {
+    it.skip('Validates the Hulu Press Twitter Footer item in the Jobs section activation/navigation', function() {
       cy
         .get(slctrFooterUL)
         .contains('Twitter')
@@ -293,7 +293,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
     // Click 'Facebook' item
     //
-    it('Validates the Hulu Press Facebook Footer item in the Jobs section activation/navigation', function() {
+    it.skip('Validates the Hulu Press Facebook Footer item in the Jobs section activation/navigation', function() {
       cy
         .get(slctrFooterUL)
         .contains('Facebook')
@@ -304,7 +304,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
     // Click 'Tumblr' item
     //
-    it('Validates the Hulu Press Tumblr Footer item in the Jobs section activation/navigation', function() {
+    it.skip('Validates the Hulu Press Tumblr Footer item in the Jobs section activation/navigation', function() {
       cy
         .get(slctrFooterUL)
         .contains('Tumblr')
@@ -315,7 +315,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
     // Click 'YouTube' item
     //
-    it('Validates the Hulu Press YouTube Footer item in the Jobs section activation/navigation', function() {
+    it.skip('Validates the Hulu Press YouTube Footer item in the Jobs section activation/navigation', function() {
       cy
         .get(slctrFooterUL)
         .contains('YouTube')
@@ -326,7 +326,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
     // Click 'Instagram' item
     //
-    it('Validates the Hulu Press Instagram Footer item in the Jobs section activation/navigation', function() {
+    it.skip('Validates the Hulu Press Instagram Footer item in the Jobs section activation/navigation', function() {
       cy
         .get(slctrFooterUL)
         .contains('Instagram')
@@ -337,7 +337,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
     // Click 'Press Site Terms' item
     //
-    it('Validates the Hulu Press Press Site Terms Footer item in the Jobs section activation/navigation', function() {
+    it.skip('Validates the Hulu Press Press Site Terms Footer item in the Jobs section activation/navigation', function() {
       cy
         .get(slctrFooterUL)
         .contains('Google+')
@@ -347,7 +347,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
     })
   })
 
-  context.only('Legal Section', function () {
+  context('Legal Section', function () {
 
     beforeEach(function () {
       cy.visit(strSiteURL)
@@ -360,9 +360,9 @@ describe('Hulu Footer Click Navigation Tests', function() {
       cy
         .get(slctrFooterUL)
         .contains('About Ads')
-        //.click()
-        //.title()
-        //.should('include','Hulu Originals – Hulu Press Site')
+        .click()
+        .title()
+        .should('include','Hulu Originals – Hulu Press Site')
     })
 
     // Click 'News' item
