@@ -99,7 +99,7 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
         })    
     })
 
-    context.only('Verify Value Props Section', function () {
+    context('Verify Value Props Section', function () {
 
         it('Verify top-level Section', function() {
             cy
@@ -112,19 +112,30 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             cy
             .get('#value-props-1 > div > div > div:nth-child(1)')
             .should('have.class', 'col-xs-4')
-            .get('h3')
-            .include('Younger & More Engaged Audience')
-            //.and('have.text','Younger & More Engaged Audience')
+            .within(() => {
+                cy.get('h3').then(($hdr) => {
+                    cy.expect($hdr.text()).to.contain('Younger & More Engaged Audience')
+                })
+            })
 
             cy
             .get('#value-props-1 > div > div > div:nth-child(2)')
             .should('have.class', 'col-xs-4')
-            .and('have.text','Personalized & Precise Targeting')
+            .within(() => {
+                cy.get('h3').then(($hdr) => {
+                    cy.expect($hdr.text()).to.contain('Personalized & Precise Targeting')
+                })
+            })
+
 
             cy
             .get('#value-props-1 > div > div > div:nth-child(3)')
             .should('have.class', 'col-xs-4')
-            .and('have.text','Clutter Free & Premium Experience')
+            .within(() => {
+                cy.get('h3').then(($hdr) => {
+                    cy.expect($hdr.text()).to.contain('Clutter Free & Premium Experience')
+                })
+            })
         })
     })
 
