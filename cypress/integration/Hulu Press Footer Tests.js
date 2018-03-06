@@ -5,7 +5,7 @@ const slctrFooterUL = '#page-44 > footer > nav > ul';
 
 const slctrNav = '#page-44 > header > div.regular-menu > nav';
 
-describe('Hulu Footer Existence Test', function() {
+describe('Hulu Press Footer Existence Test', function() {
 
     beforeEach(function () {
         cy.visit(strSiteURL)
@@ -70,7 +70,7 @@ describe('Hulu Footer Existence Test', function() {
       })
 })
 
-describe('Hulu Footer Click Navigation Tests', function() {
+describe('Hulu Press Footer Click Navigation Tests', function() {
 
   context('Hulu Section', function () {
 
@@ -221,7 +221,7 @@ describe('Hulu Footer Click Navigation Tests', function() {
 
   })
 
-  context.only('Press Section', function () {
+  context('Press Section', function () {
 
     beforeEach(function () {
       cy.visit(strSiteURL)

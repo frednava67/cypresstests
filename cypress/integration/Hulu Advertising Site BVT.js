@@ -334,41 +334,144 @@ describe('Advertising Site Home Page Element Presences Tests', function() {
             .get('#ad-experience > div > div.row.tile-c > div.tile.title-only.even.third > div > a')
             .contains('Action')
         })
-
-
     })
 
+    context('Verify Get In Touch Section', function () {
 
-
-    context('Advertising Site Home Page Element Interaction Tests', function() {
-
-        it('Opens the Hulu Insights area via clicking the Learn More Button', function() {
+        it('Verify eyebrow', function() {
             cy
-            .get('#why-hulu > div > div > div > div > div > div > a')
-            .click()
-            .title().should('include', 'Hulu Insights – Hulu Advertising')
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-4.col-xs-12 > div')
+            .should('have.class', 'eyebrow')
+            .and('have.class', 'small')
+            .and('have.text', 'Contact')
         })
 
-        it('Opens the Brand Solutions area via clicking the Learn More Button', function() {
-            cy
-            .get('#brand-solutions > div > div > div > div > div > div > a')
-            .click()
-            .title().should('include', 'Brand Solutions – Hulu Advertising')
-        })
+        it('Verify form elements', function() {
 
-        it('Opens the Ad Experience area via clicking the Learn More Button', function() {
             cy
-            .get('#ad-experience > div > div:nth-child(1) > div.col-xs-12.col-sm-4.cta-c > a')
-            .click()
-            .title().should('include', 'Ad Experience – Hulu Advertising')
-        })
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('div:nth-child(1) > div:nth-child(1) > div > input').then(($txt) => {
+                    cy.expect($txt).to.have.attr('name','contact_name')
+                })
+            })
 
-        it('Opens the Hulu Originals area via clicking the Learn More Button', function() {
             cy
-            .get('#hulu-originals > div > div > div > div > div > div > a')
-            .click()
-            .title().should('include', 'Hulu Originals – Hulu Advertising')
-        })
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('div:nth-child(1) > div:nth-child(2) > div > input').then(($txt) => {
+                    cy.expect($txt).to.have.attr('name','contact_email')
+                })
+            })
 
+            cy
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('div:nth-child(1) > div:nth-child(3) > div > input').then(($txt) => {
+                    cy.expect($txt).to.have.attr('name','contact_company')
+                })
+            })
+
+            cy
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('div:nth-child(1) > div:nth-child(4) > div > input').then(($txt) => {
+                    cy.expect($txt).to.have.attr('name','contact_city')
+                })
+            })
+
+            cy
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('div:nth-child(1) > div:nth-child(5) > div > select').then(($slct) => {
+                    cy.expect($slct).to.have.attr('name','contact_state')
+                })
+            })
+
+            cy
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('div:nth-child(1) > div:nth-child(4) > div > input').then(($txt) => {
+                    cy.expect($txt).to.have.attr('name','contact_city')
+                })
+            })
+
+            cy
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('div:nth-child(2) > div > div.form-group.gfe.content_error > textarea').then(($txtarea) => {
+                    cy.expect($txtarea).to.have.attr('name','contact_message')
+                })
+            })
+
+            cy
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('div:nth-child(2) > div > div.form-group.contact-interest.gfe.interest_error > span.interest_message').then(($grp) => {
+                    cy.expect($grp).to.have.class('interest_message')
+                })
+            })
+
+            cy
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div > div:nth-child(3) > div > div > div')
+            .should('have.class', 'g-recaptcha')
+            .and('have.class', 'gfe')
+            .and('have.class', 'human_check_error')
+
+            cy
+            .get('#content-wrap > div > div > main > div.get-in-touch > div > div > div.col-sm-8.col-xs-12 > form > div > div:nth-child(4) > div > div')
+            .should('have.class', 'form-group')
+            .within(() => {
+                cy.get('input').then(($btn) => {
+                    cy.expect($btn).to.have.attr('type','submit')
+                    cy.expect($btn).to.have.class('btn')
+                    cy.expect($btn).to.have.class('btn-primary')
+                })
+            })
+        })
+    })
+})
+
+describe('Advertising Site Home Page Element Interaction Tests', function() {
+
+    beforeEach(function() {
+        cy.visit(strSiteURL)
+        cy.title().should('include', 'Hulu Advertising')
+    })    
+
+    it('Opens the Hulu Insights area via clicking the Learn More Button', function() {
+        cy
+        .get('#why-hulu > div > div > div > div > div > div > a')
+        .click()
+        .title().should('include', 'Hulu Insights – Hulu Advertising')
+    })
+
+    it('Opens the Brand Solutions area via clicking the Learn More Button', function() {
+        cy
+        .get('#brand-solutions > div > div > div > div > div > div > a')
+        .click()
+        .title().should('include', 'Brand Solutions – Hulu Advertising')
+    })
+
+    it('Opens the Ad Experience area via clicking the Learn More Button', function() {
+        cy
+        .get('#ad-experience > div > div:nth-child(1) > div.col-xs-12.col-sm-4.cta-c > a')
+        .click()
+        .title().should('include', 'Ad Experience – Hulu Advertising')
+    })
+
+    it('Opens the Hulu Originals area via clicking the Learn More Button', function() {
+        cy
+        .get('#hulu-originals > div > div > div > div > div > div > a')
+        .click()
+        .title().should('include', 'Hulu Originals – Hulu Advertising')
     })
 })
