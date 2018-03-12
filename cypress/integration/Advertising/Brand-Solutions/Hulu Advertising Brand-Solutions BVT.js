@@ -1,17 +1,17 @@
-const strSiteURL = 'https://www.hulu.com/advertising/ad-experiences/';
+const strSiteURL = 'https://www.hulu.com/advertising/brand-solutions/';
 const slctrFooterUL = '#footer_nav > div';
 
 
-describe('Advertising Ad-Experiences Tests', function() {
+describe('Advertising Brand-Solutions Tests', function() {
 
-    it('Opens the Ad Experience area', function() {
+    it('Opens the Brand-Solutions area', function() {
         cy.visit(strSiteURL)
         cy.title().should('include', 'Brand Solutions – Hulu Advertising')
     })
 
 })
 
-describe('Advertising Ad-Experiences Site Home Page Element Presences Tests', function() {
+describe('Advertising Brand-Solutions Site Home Page Element Presences Tests', function() {
 
     beforeEach(function() {
         cy.visit(strSiteURL)
@@ -22,55 +22,55 @@ describe('Advertising Ad-Experiences Site Home Page Element Presences Tests', fu
 
         it('Verify Masthead Section', function() {
             cy
-            .get('#ad-experiences-header')
+            .get('#brand-solutions-header')
             .should('have.class', 'grey-border')
             .and('have.class', 'lg-header')
         })
     })
 
-    context('Verify Awareness Section', function () {
+    context('Verify Reach Section', function () {
 
         it('Verify Section Anchor', function() {
             cy
             .get('#content-wrap > div > div > main > div:nth-child(2)')
             .within(() => {
-                cy.get('#awareness-section').then(($div) => {
+                cy.get('#reach-section').then(($div) => {
                     cy.expect($div).to.have.class('section-anchor')
                 })
             })
 
             cy
-            .get('#scroll-trigger > div.row.sec-heading.group-awareness > div > h2')
+            .get('#scroll-trigger > div.row.sec-heading.group-reach > div > h2')
             .should('have.class', 'sec-title')
-            .and('have.text', 'Awareness')
+            .and('have.text', 'Reach')
         })
     })
 
-    context('Verify Engagement Section', function () {
+    context('Verify Seasonal Section', function () {
 
         it('Verify Section Anchor', function() {
             cy
             .get('#content-wrap > div > div > main > div:nth-child(6)')
             .within(() => {
-                cy.get('#engagement-section').then(($div) => {
+                cy.get('#seasonal-section').then(($div) => {
                     cy.expect($div).to.have.class('section-anchor')
                 })
             })
 
             cy
-            .get('#scroll-trigger > div.row.sec-heading.group-engagement > div > h2')
+            .get('#scroll-trigger > div.row.sec-heading.group-seasonal > div > h2')
             .should('have.class', 'sec-title')
-            .and('have.text', 'Engagement')
+            .and('have.text', 'Seasonal')
         })
     })
 
-    context('Verify Action Section', function () {
+    context('Verify Custom Opportunities Section', function () {
 
         it('Verify Section Anchor', function() {
             cy
             .get('#content-wrap > div > div > main > div:nth-child(10)')
             .within(() => {
-                cy.get('#action-section').then(($div) => {
+                cy.get('#custom-opportunities-section').then(($div) => {
                     cy.expect($div).to.have.class('section-anchor')
                 })
             })
@@ -78,7 +78,7 @@ describe('Advertising Ad-Experiences Site Home Page Element Presences Tests', fu
             cy
             .get('#scroll-trigger > div.row.sec-heading.group-action > div > h2')
             .should('have.class', 'sec-title')
-            .and('have.text', 'Action')
+            .and('have.text', 'Custom Opportunities')
         })
     })
 
